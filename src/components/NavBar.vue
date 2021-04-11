@@ -1,7 +1,7 @@
 <template>
   <!-- <div id="nav">
     <router-link to="/" exact>
-      <img src="../assets/logo.png" alt="Logo" width="100" height="100" />
+      <img src="../assets/img/logo.png" alt="Logo" width="100" height="100" />
     </router-link>
     <router-link to="/" exact>Home</router-link> |
     <router-link to="/movies">Movies</router-link> |
@@ -10,7 +10,13 @@
   </div> -->
   <b-navbar toggleable="lg" type="dark" variant="dark">
     <b-navbar-brand to="/">
-      <img src="../assets/logo.png" class="d-inline-block align-center" alt="Kitten" width="100" height="100">
+      <img
+        src="../assets/img/logo.png"
+        class="d-inline-block align-center"
+        alt="Movue Logo"
+        width="100"
+        height="100"
+      />
       MoVue
     </b-navbar-brand>
 
@@ -24,16 +30,15 @@
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
-      </b-navbar-nav>
+      <b-navbar-nav class="ml-auto"> </b-navbar-nav>
     </b-collapse>
   </b-navbar>
 </template>
 
 <script>
-  export default {
-    name: 'Navbar'
-  }
+export default {
+  name: "Navbar",
+};
 </script>
 
 <style scoped>
@@ -49,13 +54,13 @@
 
 @keyframes logoHover {
   0% {
-    transform: scale(1,1);
+    transform: scale(1, 1);
   }
   50% {
-    transform: scale(1.1,1.1);
+    transform: scale(1.1, 1.1);
   }
   100% {
-    transform: scale(1,1);
+    transform: scale(1, 1);
   }
 }
 
@@ -81,7 +86,11 @@ img {
   animation-duration: 3s; */
 }
 
-.navbar-brand:hover img{
+.navbar-brand {
+  font-size: 1.7rem;
+}
+
+.navbar-brand:hover img {
   animation: logoHover 1.7s 0s ease infinite;
 }
 </style>

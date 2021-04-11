@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <transition name="fade" appear>
-      <NavBar/>
+      <NavBar />
     </transition>
     <router-view />
   </div>
@@ -9,17 +9,21 @@
 
 
 <script>
-import NavBar from '@/components/NavBar.vue';
+import NavBar from "@/components/NavBar.vue";
 
 export default {
   components: {
-    NavBar
-  }
-}
+    NavBar,
+  },
+};
 </script>
 
 
 <style>
+* {
+  font-size: 1.2rem;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -28,7 +32,8 @@ export default {
 }
 
 /* Navbar transition */
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 1s, margin 1s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
