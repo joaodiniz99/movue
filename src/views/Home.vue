@@ -9,6 +9,7 @@
           src="../assets/img/movie_banner.jpg"
           alt="Movue Banner"
         ></b-img>
+        <h2 class="hero-text">The Best Movie App</h2> 
       </b-col>
     </b-row>
   </b-container>
@@ -21,10 +22,32 @@ export default {
 </script>
 
 <style scoped>
-/* IMG Banner */
+/* Banner */
 #imgBanner {
   width: 100%;
-  height: 450px;
+  height: 300px;
   object-fit: cover;
+}
+
+.hero-text {
+  font-family: 'Kiwi Maru', serif;
+  position: absolute;
+  top: 30%;
+  right: 25%;
+  color: white;
+
+  animation-name: deslizar;
+  animation-duration: 2s;
+}
+
+/* Transitions */
+@keyframes deslizar {
+  0% {
+    opacity: 0;
+    top: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 </style>

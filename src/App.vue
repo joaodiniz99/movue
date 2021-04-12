@@ -20,10 +20,7 @@ export default {
 
 
 <style>
-* {
-  font-size: 1.2rem;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap');
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

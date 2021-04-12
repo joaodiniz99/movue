@@ -1,12 +1,22 @@
 <template>
-  <div>
-    <h1>Welcome to Movie's page!</h1>
-    <ul>
+  <b-container fluid>
+    <b-row>
+      <b-col>
+        <h1>Welcome to Movie's page!</h1>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col cols="12" sm="3" md="3" lg="3" xl="3">
+        
+      </b-col>
+    </b-row>
+  </b-container>  
+
+    <!-- <ul>
       <li v-for="movie in movies" :key="movie.id">
         {{ movie }}
       </li>
-    </ul>
-  </div>
+    </ul> -->
 </template>
 
 <script>
