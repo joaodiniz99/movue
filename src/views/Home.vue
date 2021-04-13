@@ -13,7 +13,9 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col cols="12" sm="3" md="3" lg="3" xl="3"> </b-col>
+      <b-col cols="12" sm="3" md="3" lg="3" xl="3">
+        <div class="movie-card"></div>
+      </b-col>
     </b-row>
   </b-container>
 </template>
