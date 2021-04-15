@@ -27,18 +27,23 @@ export default {
       movies: [],
     };
   },
-  created() {
-    moviesApi
-      .getMovies()
-      .then((res) => {
-        // console.log(res);
-        this.movies = res;
-      })
-      .catch((err) => {
-        alert("ERRO, verificar consola!");
-        console.log(err);
-      });
+  mounted() {
+    this.getMovies();
   },
+  methods: {
+    getMovies: function() {
+      moviesApi
+        .getMovies()
+        .then((res) => {
+          // console.log(res);
+          this.movies = res;
+        })
+        .catch((err) => {
+          alert("ERRO, verificar consola!");
+          console.log(err);
+        });
+    }
+  }
 };
 </script>
 

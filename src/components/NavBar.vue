@@ -9,7 +9,7 @@
     <router-link to="/about">About</router-link>
   </div> -->
   <b-navbar toggleable="lg" type="dark" variant="dark">
-    <b-navbar-brand to="/">
+    <router-link to="/" class="navbar-brand">
       <img
         src="../assets/img/logo.png"
         class="d-inline-block align-center"
@@ -18,15 +18,18 @@
         height="100"
       />
       MoVue
-    </b-navbar-brand>
+    </router-link>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item to="/movies">Movies</b-nav-item>
-        <b-nav-item to="/contacts">Contacts</b-nav-item>
-        <b-nav-item to="/about">About</b-nav-item>
+        <router-link to="/movies">Movies</router-link>
+        <router-link to="/contacts">Contacts</router-link>
+        <router-link to="/about">About</router-link>
+        <!-- <b-nav-item to="/movies">Movies</b-nav-item> -->
+        <!-- <b-nav-item to="/contacts">Contacts</b-nav-item> -->
+        <!-- <b-nav-item to="/about">About</b-nav-item> -->
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -67,7 +70,8 @@ export default {
 /* Styles */
 a {
   font-weight: bold;
-  color: #2c3e50;
+  color: rgb(149, 153, 156);
+  text-decoration: none !important;
   transition: all 0.3s;
   padding: 10px;
 }

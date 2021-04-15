@@ -20,9 +20,9 @@ export default {
 
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=Oxygen:wght@400;700&display=swap');
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;

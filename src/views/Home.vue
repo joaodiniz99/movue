@@ -1,28 +1,36 @@
 <template>
-  <b-container fluid>
-    <b-row>
-      <b-col class="p-0">
-        <!-- <h2>Bem-vindo ao melhor site de 🎬 do 🌎</h2> -->
-        <!-- <img src="../assets/img/movie_banner.jpg" alt="Movue Banner" /> -->
-        <b-img
-          id="imgBanner"
-          src="../assets/img/movie_banner.jpg"
-          alt="Movue Banner"
-        ></b-img>
-        <h2 class="hero-text">The Best Movie App</h2>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col cols="12" sm="3" md="3" lg="3" xl="3">
-        <div class="movie-card"></div>
-      </b-col>
-    </b-row>
-  </b-container>
+  <div>
+    <b-container fluid>
+      <b-row>
+        <b-col class="p-0">
+          <!-- <h2>Bem-vindo ao melhor site de 🎬 do 🌎</h2> -->
+          <!-- <img src="../assets/img/movie_banner.jpg" alt="Movue Banner" /> -->
+          <b-img
+            id="imgBanner"
+            src="../assets/img/movie_banner.jpg"
+            alt="Movue Banner"
+          ></b-img>
+          <h2 class="hero-text">Welcome to MoVue!</h2>
+        </b-col>
+      </b-row>
+    </b-container>
+    <MoviesTab/>
+  </div>
 </template>
 
 <script>
+import MoviesTab from '@/components/MoviesTab.vue';
+
 export default {
   name: "Home",
+  components: {
+    MoviesTab
+  },
+  data() {
+    return {
+      movies: []
+    }
+  },
 };
 </script>
 
@@ -36,10 +44,11 @@ export default {
 
 .hero-text {
   font-family: "Kiwi Maru", serif;
+  font-size: 3rem;
   font-weight: bold;
   position: absolute;
   top: 30%;
-  right: 25%;
+  right: 20%;
   color: white;
 
   animation-name: deslizar;
