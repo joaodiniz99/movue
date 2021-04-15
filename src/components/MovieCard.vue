@@ -1,52 +1,54 @@
 <template>
   <b-col cols="12" sm="6" md="6" lg="3" xl="3" class="my-2">
-    <div class="movie-card">
+    <router-link class="movie-link" :to="{ name: 'movie-show', params: { id: movie.id} }">
+      <div class="movie-card">
 
-      <div>
+        <div>
+          <b-skeleton-wrapper :loading="isLoading">
+            <template #loading>
+              <b-skeleton-img height="300px"></b-skeleton-img>
+            </template>
+
+            <b-img :src="movie.poster" fluid :alt="movie.title"></b-img>
+          </b-skeleton-wrapper>
+        </div>
+        
+
+        <p class="my-2">
+          <b-skeleton-wrapper :loading="isLoading">
+            <template #loading>
+              <b-skeleton width="55px" height="17.6"></b-skeleton>
+            </template>
+
+            <b-icon icon="star-fill" variant="warning"></b-icon> 
+            <span class="px-2 rating">{{ movie.rating }}/5</span>
+          </b-skeleton-wrapper>
+        </p>
+
+
+        <h5>
+          <b-skeleton-wrapper :loading="isLoading">
+            <template #loading>
+              <b-skeleton width="100%" height="25"></b-skeleton>
+            </template>
+
+            {{ titYear }}
+          </b-skeleton-wrapper>
+        </h5>
+        
+
         <b-skeleton-wrapper :loading="isLoading">
           <template #loading>
-            <b-skeleton-img height="300px"></b-skeleton-img>
+            <b-skeleton width="60%"></b-skeleton>
           </template>
 
-          <b-img :src="movie.poster" fluid :alt="movie.title"></b-img>
+          <ul class="genres">
+            <li v-for="(genre, index) in movie.genres" :key="index">{{ genre }}</li>
+          </ul>
         </b-skeleton-wrapper>
+
       </div>
-      
-
-      <p class="my-2">
-        <b-skeleton-wrapper :loading="isLoading">
-          <template #loading>
-            <b-skeleton width="55px" height="17.6"></b-skeleton>
-          </template>
-
-          <b-icon icon="star-fill" variant="warning"></b-icon> 
-          <span class="px-2 rating">{{ movie.rating }}/5</span>
-        </b-skeleton-wrapper>
-      </p>
-
-
-      <h5>
-        <b-skeleton-wrapper :loading="isLoading">
-          <template #loading>
-            <b-skeleton width="100%" height="25"></b-skeleton>
-          </template>
-
-          {{ titYear }}
-        </b-skeleton-wrapper>
-      </h5>
-      
-
-      <b-skeleton-wrapper :loading="isLoading">
-        <template #loading>
-          <b-skeleton width="60%"></b-skeleton>
-        </template>
-
-        <ul class="genres">
-          <li v-for="(genre, index) in movie.genres" :key="index">{{ genre }}</li>
-        </ul>
-      </b-skeleton-wrapper>
-
-    </div>
+    </router-link>
   </b-col>
 </template>
 
@@ -116,5 +118,11 @@ export default {
 .genres li {
   text-decoration-line: underline;
   padding-right: 5px;
+}
+
+/* Movie link */
+.movie-link {
+  color: #F3F3F3;
+  text-decoration: none;
 }
 </style>

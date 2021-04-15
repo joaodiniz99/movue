@@ -4,9 +4,9 @@
       <span 
         v-for="(tab, index) in tabs" 
         :key="index" 
-        :class="{'active': selectedTab === tab.tab, 'movie-tab': true}"
-        @click="selectedTab = tab.tab"
-      >{{ tab.tab }}
+        :class="{'active': selectedTab === tab, 'movie-tab': true}"
+        @click="selectedTab = tab"
+      >{{ tab }}
       </span>
     </b-row>
     <b-row class="my-5" v-if="selectedTab === 'Latest'">
@@ -36,16 +36,7 @@ export default {
   },
   data() {
     return {
-      tabs: [
-        {
-          tab: 'Latest',
-          component: 'Latest Movies Card'
-        },
-        {
-          tab: 'Most Rated',
-          component: 'Most Rated Movies Card'
-        }
-      ],
+      tabs: ['Latest','Most Rated'],
       selectedTab: 'Latest',
       latestMovies: null,
       ratedMovies: null,
@@ -53,7 +44,7 @@ export default {
       loadingR: true
     }
   },
-  mounted() {
+  created() {
     this.getLatestMovies();
     this.getRatedMovies();
   },
@@ -69,7 +60,7 @@ export default {
           alert("ERRO, verificar consola!");
           console.log(err);
         })
-        .finally(() => { this.loadingL = false });
+        .finally(() => { setTimeout(() => { this.loadingL = false }, 1000) });
     },
     getRatedMovies: function() {
       moviesApi
@@ -79,10 +70,10 @@ export default {
           this.ratedMovies = res;
         })
         .catch((err) => {
-          alert("ERRO, verificar console!")
+          alert("ERRO, verificar console!");
           console.log(err);
         })
-        .finally(() => { this.loadingR = false });
+        .finally(() => { setTimeout(() => { this.loadingR = false }, 1000) });
     }
   }
 }
@@ -94,7 +85,7 @@ export default {
 /* Tab */
 .movie-tab {
   font-weight: 600;
-  color: rgb(149, 153, 156);
+  color: #F3F3F3;
   cursor: pointer;
   margin: 0 5px;
 
@@ -111,7 +102,7 @@ export default {
 }
 
 .movie-tab:hover {
-  color: rgb(149, 153, 156);
+  color: #F3F3F3;
 }
 
 .movie-tab:hover:after {
@@ -119,7 +110,7 @@ export default {
 }
 
 .active {
-  color: rgb(149, 153, 156);
+  color: #F3F3F3;
 }
 
 .active:after {

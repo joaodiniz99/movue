@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="mode">
     <transition name="fade" appear>
       <NavBar />
     </transition>
@@ -12,20 +12,31 @@
 import NavBar from "@/components/NavBar.vue";
 
 export default {
+  name: 'App',
+  data() {
+    return {
+      mode: 'dark'
+    }
+  },
   components: {
     NavBar,
-  },
+  }
 };
 </script>
 
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=Oxygen:wght@400;700&display=swap');
+
+html {
+  background: #2c3e50;
+}
+
 #app {
   font-family: Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  background: #2c3e50;
 }
 
 /* Navbar transition */

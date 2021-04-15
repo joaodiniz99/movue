@@ -49,7 +49,7 @@ export default {
   position: absolute;
   top: 30%;
   right: 20%;
-  color: white;
+  color: white !important;
 
   animation-name: deslizar;
   animation-duration: 2s;

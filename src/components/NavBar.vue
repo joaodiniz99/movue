@@ -68,6 +68,10 @@ export default {
 }
 
 /* Styles */
+.navbar {
+  background: #343a40 !important;
+}
+
 a {
   font-weight: bold;
   color: rgb(149, 153, 156);
