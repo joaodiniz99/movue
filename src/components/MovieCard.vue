@@ -1,8 +1,10 @@
 <template>
   <b-col cols="12" sm="6" md="6" lg="3" xl="3" class="my-2">
-    <router-link class="movie-link" :to="{ name: 'movie-show', params: { id: movie.id} }">
+    <router-link
+      class="movie-link"
+      :to="{ name: 'movie-show', params: { id: movie.id } }"
+    >
       <div class="movie-card">
-
         <div>
           <b-skeleton-wrapper :loading="isLoading">
             <template #loading>
@@ -12,7 +14,6 @@
             <b-img :src="movie.poster" fluid :alt="movie.title"></b-img>
           </b-skeleton-wrapper>
         </div>
-        
 
         <p class="my-2">
           <b-skeleton-wrapper :loading="isLoading">
@@ -20,11 +21,10 @@
               <b-skeleton width="55px" height="17.6"></b-skeleton>
             </template>
 
-            <b-icon icon="star-fill" variant="warning"></b-icon> 
+            <b-icon icon="star-fill" variant="warning"></b-icon>
             <span class="px-2 rating">{{ movie.rating }}/5</span>
           </b-skeleton-wrapper>
         </p>
-
 
         <h5>
           <b-skeleton-wrapper :loading="isLoading">
@@ -35,7 +35,6 @@
             {{ titYear }}
           </b-skeleton-wrapper>
         </h5>
-        
 
         <b-skeleton-wrapper :loading="isLoading">
           <template #loading>
@@ -43,42 +42,56 @@
           </template>
 
           <ul class="genres">
-            <li v-for="(genre, index) in movie.genres" :key="index">{{ genre }}</li>
+            <li v-for="(genre, index) in movie.genres" :key="index">
+              {{ genre }}
+            </li>
           </ul>
         </b-skeleton-wrapper>
-
       </div>
     </router-link>
   </b-col>
 </template>
 
 <script>
-import helper from '../utils/utils';
+import helper from "../utils/utils";
 
 export default {
   name: "MovieCard",
   props: {
     movie: {
       type: Object,
-      required: true
+      required: true,
     },
     isLoading: {
       type: Boolean,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     titYear: function () {
       const date = helper.getDate(this.movie.release_date);
-      const title = this.movie.title.length >= 15 ? this.movie.title.substr(0, 15) + '...' : this.movie.title 
+      const title =
+        this.movie.title.length >= 15
+          ? this.movie.title.substr(0, 15) + "..."
+          : this.movie.title;
       return `${title} (${date.getFullYear()})`;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
 /* Animations */
+@keyframes cardEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* Movie Card */
 .movie-card {
@@ -87,6 +100,7 @@ export default {
   padding: 10px;
   cursor: pointer;
   transition: transform 0.3s;
+  animation: cardEntry 1s 0s;
 }
 
 .movie-card:hover {
@@ -98,7 +112,7 @@ export default {
 }
 
 .movie-card h5 {
-  font-family: 'Oxygen', sans-serif;
+  font-family: "Oxygen", sans-serif;
   font-weight: 700;
 }
 
@@ -122,7 +136,7 @@ export default {
 
 /* Movie link */
 .movie-link {
-  color: #F3F3F3;
+  color: #f3f3f3;
   text-decoration: none;
 }
 </style>

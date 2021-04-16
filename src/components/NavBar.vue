@@ -1,13 +1,4 @@
 <template>
-  <!-- <div id="nav">
-    <router-link to="/" exact>
-      <img src="../assets/img/logo.png" alt="Logo" width="100" height="100" />
-    </router-link>
-    <router-link to="/" exact>Home</router-link> |
-    <router-link to="/movies">Movies</router-link> |
-    <router-link to="/contacts">Contacts</router-link> |
-    <router-link to="/about">About</router-link>
-  </div> -->
   <b-navbar toggleable="lg" type="dark" variant="dark">
     <router-link to="/" class="navbar-brand">
       <img
@@ -27,9 +18,6 @@
         <router-link to="/movies">Movies</router-link>
         <router-link to="/contacts">Contacts</router-link>
         <router-link to="/about">About</router-link>
-        <!-- <b-nav-item to="/movies">Movies</b-nav-item> -->
-        <!-- <b-nav-item to="/contacts">Contacts</b-nav-item> -->
-        <!-- <b-nav-item to="/about">About</b-nav-item> -->
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -46,15 +34,6 @@ export default {
 
 <style scoped>
 /* Animations */
-@keyframes logoEntry {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes logoHover {
   0% {
     transform: scale(1, 1);
@@ -88,10 +67,8 @@ a.router-link-exact-active {
   color: rgb(255, 0, 55) !important;
 }
 
-img {
+.navbar-brand img {
   margin: 0 10px 0 0;
-  /* animation-name: logoEntry;
-  animation-duration: 3s; */
 }
 
 .navbar-brand {
