@@ -100,7 +100,7 @@ export default {
   padding: 10px;
   cursor: pointer;
   transition: transform 0.3s;
-  animation: cardEntry 1s 0s;
+  animation: cardEntry 0.5s 0s;
 }
 
 .movie-card:hover {

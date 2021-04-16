@@ -48,7 +48,7 @@ export default {
 
 /* Styles */
 .navbar {
-  background: #343a40 !important;
+  background: #2c3e50 !important;
 }
 
 a {

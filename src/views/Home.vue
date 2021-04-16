@@ -3,8 +3,6 @@
     <b-container fluid>
       <b-row>
         <b-col class="p-0">
-          <!-- <h2>Bem-vindo ao melhor site de 🎬 do 🌎</h2> -->
-          <!-- <img src="../assets/img/movie_banner.jpg" alt="Movue Banner" /> -->
           <b-img
             id="imgBanner"
             src="../assets/img/movie_banner.jpg"
@@ -14,22 +12,17 @@
         </b-col>
       </b-row>
     </b-container>
-    <MoviesTab/>
+    <MoviesTab />
   </div>
 </template>
 
 <script>
-import MoviesTab from '@/components/MoviesTab.vue';
+import MoviesTab from "@/components/MoviesTab.vue";
 
 export default {
   name: "Home",
   components: {
-    MoviesTab
-  },
-  data() {
-    return {
-      movies: []
-    }
+    MoviesTab,
   },
 };
 </script>
@@ -52,7 +45,7 @@ export default {
   color: white !important;
 
   animation-name: deslizar;
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 
 /* Transitions */
