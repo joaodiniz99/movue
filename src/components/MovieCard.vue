@@ -71,8 +71,8 @@ export default {
     titYear: function () {
       const date = helper.getDate(this.movie.release_date);
       const title =
-        this.movie.title.length >= 15
-          ? this.movie.title.substr(0, 15) + "..."
+        this.movie.title.length >= 12
+          ? this.movie.title.substr(0, 12) + "..."
           : this.movie.title;
       return `${title} (${date.getFullYear()})`;
     },

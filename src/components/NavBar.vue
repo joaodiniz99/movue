@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="dark">
+  <b-navbar toggleable="lg" type="dark" variant="dark" :sticky="sticky">
     <router-link to="/" class="navbar-brand">
       <img
         src="../assets/img/logo.png"
@@ -29,6 +29,11 @@
 <script>
 export default {
   name: "Navbar",
+  data() {
+    return {
+      sticky: true
+    }
+  },
 };
 </script>
 
@@ -49,6 +54,7 @@ export default {
 /* Styles */
 .navbar {
   background: #2c3e50 !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
 }
 
 a {

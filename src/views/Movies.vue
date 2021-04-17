@@ -1,30 +1,29 @@
 <template>
-  <b-container fluid>
+  <b-container>
     <b-row>
-      <b-col>
-        <h1>Welcome to Movie's page!</h1>
+      <b-col class="text-center">
+        <h1 class="title mt-4">Welcome to Movie's page!</h1>
       </b-col>
     </b-row>
     <b-row>
-      <!-- <MovieCard//> -->
+      <MovieCard v-for="movie in movies" :key="movie.id" :movie="movie" :isLoading="loading"/>
     </b-row>
   </b-container>
-
-  <!-- <ul>
-      <li v-for="movie in movies" :key="movie.id">
-        {{ movie }}
-      </li>
-    </ul> -->
 </template>
 
 <script>
 import moviesApi from "../services/moviesApi";
+import MovieCard from '@/components/MovieCard.vue';
 
 export default {
   name: "Movies",
+  components: {
+    MovieCard
+  },
   data() {
     return {
       movies: [],
+      loading: true
     };
   },
   mounted() {
@@ -41,6 +40,9 @@ export default {
         .catch((err) => {
           alert("ERRO, verificar consola!");
           console.log(err);
+        })
+        .finally(() => { 
+          this.loading = false;
         });
     }
   }
@@ -48,4 +50,7 @@ export default {
 </script>
 
 <style scoped>
+.title {
+  color: #F3F3F3;
+}
 </style>
