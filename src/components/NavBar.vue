@@ -21,7 +21,9 @@
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto"> </b-navbar-nav>
+      <b-navbar-nav class="ml-auto">
+        <router-link to="/signin" class="signinBtn">Sign In</router-link>
+      </b-navbar-nav>
     </b-collapse>
   </b-navbar>
 </template>
@@ -83,5 +85,24 @@ a.router-link-exact-active {
 
 .navbar-brand:hover img {
   animation: logoHover 1.7s 0s ease infinite;
+}
+
+/* Sign In */
+.signinBtn {
+  color: white;
+  /* color: rgb(255, 0, 55); */
+  /* background-color: #2c3e50; */
+  background-color: rgba(255, 0, 55, 0.767);
+  border-radius: 20px;
+  box-shadow: 0 0 23px rgba(0, 0, 0, 0.3);
+  transition: color 0.2s;
+}
+
+.signinBtn:hover {
+  color: #2c3e50 !important;
+}
+
+.signinBtn.router-link-exact-active {
+  color: #2c3e50 !important;
 }
 </style>
